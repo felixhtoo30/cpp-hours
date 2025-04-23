@@ -22,4 +22,9 @@ int main()
     printf("Value of r is %d\n", r);
     printf("Value of *r (value of q) is %d\n", *r);
     printf("Address of r is %d\n", &r);
+
+    ***r = 100;
+    printf("Value of x is %d\n", ***r);
+    **q = *p + 2;
+    printf("Value of x is %d\n", **q);
 }
