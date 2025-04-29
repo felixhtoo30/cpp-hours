@@ -3,6 +3,7 @@
 
 void printFunc(char *C)
 {
+    C[0] = 'X';
     // int i = 0;
     // while (C[i] != '\0')
     // {
@@ -46,7 +47,12 @@ int main()
     printf("C1 = %s, C2 = %c\n", C1, C2[1]); // C2[1] or *(C2 + 1) ... Both are same ...
 
     /** 3) Arrays are always passed to functions by reference */
-    char C3[20] = "HELLO";
+    char C3[20] = "HELLO"; // String gets stored in the space for array (array is writable)
+    C3[0] = 'A';
+
+    // char *C3 = "HELLO"; // String gets stored as read-only memory (compile time constant)
+    // C3[0] = 'A'; // Error will occur because C3 is read-only in compile time constant
+
     printFunc(C3);
-    printf("==========\n");
+    printf("\n==========\n");
 }
